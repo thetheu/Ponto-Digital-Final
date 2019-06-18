@@ -1,0 +1,37 @@
+@using Projeto_final;
+@using Projeto_final.Models;
+@{
+    Layout = "_LayoutAdm";
+    ViewData["TituloPag"] = "Listar";
+}
+
+    <link rel="stylesheet" href="wwwroot/css/listar.css">
+
+<thead class ="thead-dark"> 
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Senha</th>
+            <th>Data de Nascimento</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in ViewData["Cadastro"] as List<Cadastro>)
+        {
+        <tr>
+            <br>
+            <td>@item.Nome</td>
+            <br>
+            <td>@item.Email</td>
+            <br>
+            <td>@item.Texto</td>
+            <td>
+                <a href="/Cadastro/Editar?id=@item.Id" class="btn btn-light">Aprovar</a>
+                <a href="#" class="btn btn-danger">Reprovar</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+</div>
